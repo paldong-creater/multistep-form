@@ -1,0 +1,113 @@
+#summary {
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+  display: none;
+}
+
+#selectedItems #grayContainer{
+  width: 80%;
+  padding: 20px;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 10px;
+}
+
+#selectedPlan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+#planCost {
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+}
+
+hr{
+  background-color: hsl(229, 24%, 87%);
+  height: 1px;
+  border-width:0;
+  margin: 10px 0;
+}
+
+.addonsList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+#total {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+#totalCost {
+  color: hsl(243, 100%, 62%);
+}
+
+#change {
+  cursor: pointer;
+  text-decoration-line: underline;
+  margin-top: 0;
+}
+
+#change:hover {
+  color: hsl(243, 100%, 62%);
+}
+
+#confirmButton {
+  background-color: hsl(243, 100%, 62%);
+}
+
+#confirmButton:hover {
+  filter: brightness(150%);
+}
+
+.addonsName {
+  margin: 5px;
+}
+
+@media(max-width:375px){
+  #summary .details-heading {
+    position: relative;
+    bottom: 87px;
+    width: 90%;
+    margin: auto;
+    padding: 20px 20px 0 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+  }
+
+  #selectedItems {
+    position: absolute;
+    top: 230px;
+    left: 19px;
+    width: 90%;
+    margin: auto;
+    padding: 10px 20px 20px 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 0 0 10px 10px;
+  }
+
+  #selectedItems #grayContainer {
+    width: 100%;
+  }
+
+  #total {
+    width: 100%;
+    padding: 10px 20px 0 20px;
+  }
+
+  #summary .footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 16px;
+    background-color: hsl(0, 0%, 100%);
+  }
+}

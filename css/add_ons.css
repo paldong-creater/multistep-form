@@ -1,0 +1,89 @@
+
+#addOns {
+  position: relative;
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+  display: none;
+}
+
+#addOns-form fieldset{
+  width: 80%;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 15% 65% 20%;
+  align-items: center;
+  cursor: pointer;
+}
+
+#addOns-form fieldset:hover{
+  border-color: blue;
+}
+
+#addOns-form fieldset input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  accent-color: hsl(243, 100%, 62%); 
+}
+
+#addOns-form fieldset h4,
+#addOns-form fieldset p{
+  padding: 0;
+  margin: 0;
+}
+
+.monthly, .yearly {
+  color: hsl(243, 100%, 62%);
+}
+
+@media(max-width:375px){
+
+  #addOns .details-heading {
+    position: relative;
+    bottom: 90px;
+    width: 90%;
+    margin: auto;
+    padding: 20px 20px 0 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+  }
+
+  #addOns-form {
+    position: relative;
+    bottom: 66px;
+    width: 90%;
+    margin: auto;
+    padding: 10px 20px 20px 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 0 0 10px 10px;
+  }
+
+  #addOns-form fieldset{
+    width: 100%;
+    grid-template-columns: 15% 67% 18%;
+  }
+
+  #addOns-form h4 {
+    font-size: 14px;
+  }
+
+  #addOns-form p {
+    font-size: 14px;
+  }
+
+  #addOns-form fieldset input[type='checkbox'] {
+    margin-left: 10px;
+  }
+
+  #addOns .footer {
+    position: relative;
+    padding: 16px;
+    background-color: hsl(0, 0%, 100%);
+  }
+}

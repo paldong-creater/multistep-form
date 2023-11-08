@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+/* reset default browser setting | base style*/
+
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  width: 100%;
+  background-color:hsl(217, 100%, 97%);
+  overflow: hidden;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 10px 0;
+  color: hsl(213, 96%, 18%);
+}
+
+h4, h5 {
+  color: hsl(213, 96%, 18%);
+}
+
+p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: hsl(231, 11%, 63%)
+}
+
+img {
+  width: 100%;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.success {
+  border: 1px solid hsl(229, 24%, 87%);
+}
+
+.error {
+  border:1px solid hsl(354, 84%, 57%);
+}
+
+::placeholder {
+  color: hsl(231, 11%, 63%);
+  font-size: 16px;
+}
+
+#main-container{
+  width: 950px;
+  padding: 10px;
+  height: 588px;
+  background-color:hsl(0, 0%, 100%);
+  margin: 100px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+#sidebar{
+  width: 274px;
+  background-image: url('/assets/images/bg-sidebar-desktop.svg');
+}
+
+.circle{
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle-highlight {
+  background-color: hsl(206, 94%, 87%);
+}
+
+.circle-highlight p {
+  color: hsl(213, 96%, 18%);
+}
+
+.circle p{
+  position: absolute;
+  top: -6px;
+  right: 12px; 
+}
+
+.right-text p,
+.right-text h4{
+  margin:0;
+  padding-left:15px;
+  line-height: 1.2;
+  color: hsl(0, 0%, 100%);
+}
+
+.right-text p {
+  color: hsl(231, 11%, 63%)
+}
+
+.step-container{
+  margin-top:30px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+#personal-info {
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+}
+
+#personal-info label p{
+  margin: 5px 0;
+  color: hsl(213, 96%, 18%);
+}
+
+.fieldError {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+small{
+  font-size: 14px;
+  color: hsl(354, 84%, 57%);;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  gap: 48%;
+}
+
+.backButton {
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: hsl(231, 11%, 63%);
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: hsl(213, 96%, 18%);
+}
+
+.nextButton {
+  border: none;
+  width: 120px;
+  height: 50px;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 10px;
+  font-size: 16px;
+  color: hsl(231, 100%, 99%);
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  filter: brightness(150%);
+}
+
+#empty {
+  width: 61.36px;
+}
+
+@media(max-width:375px){
+
+  h1{
+    font-size: 26px;
+  }
+  #main-container{
+    width: 375px;
+    padding: 0;
+    height: 667px;
+    background-color:hsl(217, 100%, 97%);
+    margin: auto;
+    border-radius: 0;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 75%;
+  }
+
+  #sidebar{
+    width: 100%;
+    background-image: url('/assets/images/bg-sidebar-mobile.svg');
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .right-text{
+    display: none;
+  }
+
+  .step-container{
+    margin: 30px 5px 0 5px;
+    padding-left: 0;
+    display: block;
+    align-items: center;
+  }
+
+  #personal-info {
+    margin-top: 20px;
+    height: 100%;
+    display: block;
+  }
+
+  #personal-info .details-heading {
+    position: relative;
+    bottom: 85px;
+    width: 90%;
+    margin: auto;
+    padding: 20px 20px 0 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 10px 10px 0 0;
+  }
+
+  #infoForm {
+    position: relative;
+    bottom: 100px;
+    width: 90%;
+    margin: auto;
+    padding: 10px 20px 20px 20px;
+    background-color:hsl(0, 0%, 100%);
+    border-radius: 0 0 10px 10px;
+  }
+
+  #infoForm input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .fieldError {
+    width: 100%;
+    
+  }
+
+  #personal-info .footer {
+    position: relative;
+    top: 7px;
+    padding: 16px;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .backButton {
+    font-size: 15px;
+  }
+
+  .nextButton {
+    height: 45px;
+    border-radius: 5px;
+  } 
+}
