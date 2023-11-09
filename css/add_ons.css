@@ -1,4 +1,3 @@
-
 #addOns {
   position: relative;
   margin-top: 20px;
@@ -8,7 +7,7 @@
   display: none;
 }
 
-#addOns-form fieldset{
+#addOns-form fieldset {
   width: 80%;
   height: 70px;
   border: 1px solid black;
@@ -20,51 +19,56 @@
   cursor: pointer;
 }
 
-#addOns-form fieldset:hover{
+#addOns-form fieldset:hover {
   border-color: blue;
 }
 
-#addOns-form fieldset input[type='checkbox'] {
+#addOns-form fieldset input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin-top: 20px;
   margin-left: 20px;
-  accent-color: hsl(243, 100%, 62%); 
+  accent-color: hsl(243, 100%, 62%);
 }
 
 #addOns-form fieldset h4,
-#addOns-form fieldset p{
+#addOns-form fieldset p {
   padding: 0;
   margin: 0;
 }
 
-.monthly, .yearly {
+.monthly,
+.yearly {
   color: hsl(243, 100%, 62%);
 }
 
-@media(max-width:375px){
+@media (max-width: 500px) {
+  #addOns {
+    margin-top: 0px;
+    grid-template-rows: 100%;
+  }
 
   #addOns .details-heading {
     position: relative;
-    bottom: 90px;
+    bottom: 251px;
     width: 90%;
     margin: auto;
     padding: 20px 20px 0 20px;
-    background-color:hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 10px 10px 0 0;
   }
 
   #addOns-form {
     position: relative;
-    bottom: 66px;
+    bottom: 448px;
     width: 90%;
     margin: auto;
     padding: 10px 20px 20px 20px;
-    background-color:hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 0 0 10px 10px;
   }
 
-  #addOns-form fieldset{
+  #addOns-form fieldset {
     width: 100%;
     grid-template-columns: 15% 67% 18%;
   }
@@ -77,13 +81,22 @@
     font-size: 14px;
   }
 
-  #addOns-form fieldset input[type='checkbox'] {
+  #addOns-form fieldset input[type="checkbox"] {
     margin-left: 10px;
   }
 
   #addOns .footer {
-    position: relative;
-    padding: 16px;
     background-color: hsl(0, 0%, 100%);
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 375px) {
+  #addOns-form {
+    bottom: 435px;
   }
 }

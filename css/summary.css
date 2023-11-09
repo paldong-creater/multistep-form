@@ -6,7 +6,7 @@
   display: none;
 }
 
-#selectedItems #grayContainer{
+#selectedItems #grayContainer {
   width: 80%;
   padding: 20px;
   background-color: hsl(217, 100%, 97%);
@@ -16,7 +16,7 @@
 #selectedPlan {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 #planCost {
@@ -24,17 +24,17 @@
   font-weight: 700;
 }
 
-hr{
+hr {
   background-color: hsl(229, 24%, 87%);
   height: 1px;
-  border-width:0;
+  border-width: 0;
   margin: 10px 0;
 }
 
 .addonsList {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 #total {
@@ -42,7 +42,7 @@ hr{
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 #totalCost {
@@ -71,25 +71,30 @@ hr{
   margin: 5px;
 }
 
-@media(max-width:375px){
+@media (max-width: 500px) {
+  #summary {
+    margin-top: 0px;
+    grid-template-rows: 100%;
+  }
+
   #summary .details-heading {
     position: relative;
-    bottom: 87px;
+    bottom: 251px;
     width: 90%;
     margin: auto;
     padding: 20px 20px 0 20px;
-    background-color:hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 10px 10px 0 0;
   }
 
   #selectedItems {
     position: absolute;
-    top: 230px;
-    left: 19px;
+    top: 206px;
+    left: 25px;
     width: 90%;
     margin: auto;
     padding: 10px 20px 20px 20px;
-    background-color:hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 0 0 10px 10px;
   }
 
@@ -103,11 +108,22 @@ hr{
   }
 
   #summary .footer {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 16px;
     background-color: hsl(0, 0%, 100%);
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 91px;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 375px) {
+  #selectedItems {
+    top: 230px;
+    left: 19px;
+  }
+
+  #summary .footer {
+    bottom: 0px;
   }
 }
