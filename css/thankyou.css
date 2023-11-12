@@ -1,35 +1,24 @@
 #thankyou {
   margin-top: 150px;
-  margin-right: 100px;
+  padding: 0 100px;
   text-align: center;
   display: none;
 }
 
 #thankyou img {
-  width: 100px;
+  width: 80px;
 }
-
 @media (max-width: 500px) {
   #thankyou {
-    position: relative;
-    left: 25px;
-    bottom: 68px;
     width: 90%;
-    margin-top: 0;
-    margin-right: 0;
-    padding: 80px 20px 80px 20px;
+    height: 90%;
+    margin: auto;
+    padding: 20px 20px 0 20px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
   }
 
-  #thankyou img {
-    width: 60px;
-  }
-}
-
-@media (max-width: 375px) {
-  #thankyou {
-    left: 20px;
-    bottom: 68px;
+  #thankyou .details-heading {
+    margin-top: 40px;
   }
 }

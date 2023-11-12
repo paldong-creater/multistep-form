@@ -1,95 +1,94 @@
 let planSum = 0;
 let addonsSum = 0;
 
-let infoNextButton = document.getElementById("infoNextButton");
+let step1 = document.getElementById("step1");
+let step2 = document.getElementById("step2");
+let step3 = document.getElementById("step3");
+let step4 = document.getElementById("step4");
 
-let planNextButton = document.getElementById("planNextButton");
-let planBackButton = document.getElementById("planBackButton");
-
-let addonsNextButton = document.getElementById("addonsNextButton");
-let addonsBackButton = document.getElementById("addonsBackButton");
-
-let summaryBackButton = document.getElementById("summaryBackButton");
-let confirmButton = document.getElementById("confirmButton");
-
+let personalInfo = document.getElementById("personal-info");
+let plan = document.getElementById("plan");
+let addOns = document.getElementById("addOns");
+let summary = document.getElementById("summary");
+let thankYou = document.getElementById("thankyou");
+let nextButton = document.getElementById("nextButton");
+let backButton = document.getElementById("backButton");
+let empty = document.getElementById("empty");
 let change = document.getElementById("change");
+let footer = document.getElementById("footer");
 
-infoNextButton.addEventListener("click", function (event) {
-  checkInput();
-});
-
-planNextButton.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(2) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(3) span")
-    .classList.add("circle-highlight");
-  document.getElementById("plan").style.display = "none";
-  document.getElementById("addOns").style.display = "grid";
-});
-
-planBackButton.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(2) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(1) span")
-    .classList.add("circle-highlight");
-  document.getElementById("plan").style.display = "none";
-  document.getElementById("personal-info").style.display = "grid";
-});
-
-addonsNextButton.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(3) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(4) span")
-    .classList.add("circle-highlight");
-  document.getElementById("addOns").style.display = "none";
-  document.getElementById("summary").style.display = "grid";
-  showAddons();
-});
-
-addonsBackButton.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(3) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(2) span")
-    .classList.add("circle-highlight");
-  document.getElementById("addOns").style.display = "none";
-  document.getElementById("plan").style.display = "grid";
-});
-
-confirmButton.addEventListener("click", function () {
-  document.getElementById("summary").style.display = "none";
-  document.getElementById("thankyou").style.display = "grid";
-});
-
-summaryBackButton.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(4) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(3) span")
-    .classList.add("circle-highlight");
-  document.getElementById("summary").style.display = "none";
-  document.getElementById("addOns").style.display = "grid";
-  removeAddons();
+let currentDisplay = "personal-info";
+nextButton.addEventListener("click", function () {
+  if (currentDisplay == "personal-info") {
+    if (checkInput()) {
+      step1.classList.remove("circle-highlight");
+      step2.classList.add("circle-highlight");
+      personalInfo.style.display = "none";
+      plan.style.display = "grid";
+      empty.style.display = "none";
+      backButton.style.display = "block";
+      currentDisplay = "plan";
+    } else {
+      return false;
+    }
+  } else if (currentDisplay == "plan") {
+    step2.classList.remove("circle-highlight");
+    step3.classList.add("circle-highlight");
+    plan.style.display = "none";
+    addOns.style.display = "grid";
+    currentDisplay = "addOns";
+  } else if (currentDisplay == "addOns") {
+    step3.classList.remove("circle-highlight");
+    step4.classList.add("circle-highlight");
+    addOns.style.display = "none";
+    summary.style.display = "grid";
+    nextButton.innerText = "Confirm";
+    nextButton.style.backgroundColor = "hsl(243, 100%, 62%)";
+    currentDisplay = "summary";
+    showAddons();
+  } else {
+    summary.style.display = "none";
+    footer.style.display = "none";
+    thankYou.style.display = "grid";
+  }
 });
 
 change.addEventListener("click", function () {
-  document
-    .querySelector(".step-container:nth-child(4) span")
-    .classList.remove("circle-highlight");
-  document
-    .querySelector(".step-container:nth-child(2) span")
-    .classList.add("circle-highlight");
-  document.getElementById("summary").style.display = "none";
-  document.getElementById("plan").style.display = "grid";
+  step4.classList.remove("circle-highlight");
+  step2.classList.add("circle-highlight");
+  summary.style.display = "none";
+  plan.style.display = "grid";
+  nextButton.innerText = "Next Step";
+  nextButton.style.backgroundColor = "hsl(213, 96%, 18%)";
+  currentDisplay = "plan";
   removeAddons();
+});
+
+backButton.addEventListener("click", function () {
+  if (currentDisplay == "plan") {
+    step2.classList.remove("circle-highlight");
+    step1.classList.add("circle-highlight");
+    plan.style.display = "none";
+    personalInfo.style.display = "grid";
+    backButton.style.display = "none";
+    empty.style.display = "block";
+    currentDisplay = "personal-info";
+  } else if (currentDisplay == "addOns") {
+    step3.classList.remove("circle-highlight");
+    step2.classList.add("circle-highlight");
+    addOns.style.display = "none";
+    plan.style.display = "grid";
+    currentDisplay = "plan";
+  } else if (currentDisplay == "summary") {
+    step4.classList.remove("circle-highlight");
+    step3.classList.add("circle-highlight");
+    summary.style.display = "none";
+    addOns.style.display = "grid";
+    currentDisplay = "addOns";
+    nextButton.innerText = "Next Step";
+    nextButton.style.backgroundColor = "hsl(213, 96%, 18%)";
+    removeAddons();
+  }
 });
 
 // plan functionality
@@ -250,6 +249,8 @@ function removeAddons() {
   selectedAddons.innerHTML = "";
 }
 
+// Form validation
+
 function checkInput() {
   const usernameEl = document.querySelector("#name");
   const emailEl = document.querySelector("#email");
@@ -347,13 +348,8 @@ function checkInput() {
 
   // submit to the server if the form is valid
   if (isFormValid) {
-    document
-      .querySelector(".step-container span")
-      .classList.remove("circle-highlight");
-    document
-      .querySelector(".step-container:nth-child(2) span")
-      .classList.add("circle-highlight");
-    document.getElementById("personal-info").style.display = "none";
-    document.getElementById("plan").style.display = "grid";
+    return true;
+  } else {
+    return false;
   }
 }

@@ -1,18 +1,18 @@
 /* Step 2 CSS */
 
 #plan {
-  position: relative;
   margin-top: 20px;
   height: 100%;
   display: grid;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-rows: 25% 75%;
   display: none;
 }
 
 #plan-form {
+  position: relative;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  gap: 60px;
+  grid-template-rows: 80% 20%;
+  align-items: center;
 }
 
 fieldset {
@@ -34,7 +34,7 @@ fieldset {
 /* Create a custom radio button */
 .plan-radio .box-radio {
   position: absolute;
-  top: 110px;
+  top: 20px;
   left: 0;
   width: 135px;
   height: 170px;
@@ -53,7 +53,7 @@ fieldset {
 }
 
 .box-radio:nth-child(3) {
-  left: 305px;
+  left: 310px;
 }
 
 .plan-radio img {
@@ -150,30 +150,11 @@ fieldset {
 
 @media (max-width: 500px) {
   #plan {
-    margin-top: 0;
-    height: 100%;
-    grid-template-rows: 100%;
-  }
-
-  #plan .details-heading {
-    position: relative;
-    bottom: 254px;
     width: 90%;
     margin: auto;
     padding: 20px 20px 0 20px;
     background-color: hsl(0, 0%, 100%);
-    border-radius: 10px 10px 0 0;
-  }
-
-  #plan-form {
-    position: relative;
-    bottom: 451px;
-    width: 90%;
-    height: 350px;
-    margin: auto;
-    padding: 10px 20px 20px 20px;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
   }
 
   .plan-radio .box-radio {
@@ -203,7 +184,7 @@ fieldset {
 
   .switch-box {
     position: relative;
-    top: 85px;
+    top: 0px;
     width: 100%;
     height: 45px;
   }
@@ -217,19 +198,48 @@ fieldset {
     width: 15px;
     bottom: 4px;
   }
-
-  #plan .footer {
-    background-color: hsl(0, 0%, 100%);
-    padding: 15px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    justify-content: space-around;
-  }
 }
 
 @media (max-width: 375px) {
-  #plan-form {
-    bottom: 445px;
+  .plan-radio .box-radio {
+    top: 30px;
+    left: 17px;
+    width: 90%;
+    height: 60px;
+  }
+
+  .box-radio:nth-child(2) {
+    left: 17px;
+    top: 100px;
+  }
+
+  .box-radio:nth-child(3) {
+    left: 17px;
+    top: 170px;
+  }
+
+  .plan-radio img {
+    width: 40px;
+    margin-top: -5px;
+  }
+
+  .box-radio .monthly,
+  .box-radio .yearly {
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+  }
+
+  .box-radio .yearly h4 {
+    font-size: 14px;
+  }
+
+  .box-radio .yearly p {
+    font-size: 10px;
+  }
+
+  .box-radio .yearly h5 {
+    font-size: 10px;
   }
 }

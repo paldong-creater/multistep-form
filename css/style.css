@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
   width: 100%;
   background-color: hsl(217, 100%, 97%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ul {
@@ -72,20 +72,28 @@ input {
 }
 
 #main-container {
-  width: 950px;
+  max-width: 950px;
   padding: 10px;
-  height: 588px;
+  min-height: 588px;
   background-color: hsl(0, 0%, 100%);
   margin: 100px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-areas:
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar footer footer";
 }
 
 #sidebar {
   width: 274px;
   background-image: url("/assets/images/bg-sidebar-desktop.svg");
+  grid-area: sidebar;
+}
+
+#details {
+  grid-area: main;
 }
 
 .circle {
@@ -134,7 +142,7 @@ input {
   margin-top: 20px;
   height: 100%;
   display: grid;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-rows: 25% 75%;
 }
 
 #personal-info label p {
@@ -154,25 +162,29 @@ small {
   color: hsl(354, 84%, 57%);
 }
 
-.footer {
+#footer {
   display: flex;
-  align-items: center;
-  gap: 48%;
+  align-items: flex-end;
+  gap: 49%;
+  padding-bottom: 20px;
+  grid-area: footer;
 }
 
-.backButton {
+#backButton {
   border: none;
   background: none;
   font-size: 16px;
   color: hsl(231, 11%, 63%);
+  padding-bottom: 15px;
   cursor: pointer;
+  display: none;
 }
 
-.backButton:hover {
+#backButton:hover {
   color: hsl(213, 96%, 18%);
 }
 
-.nextButton {
+#nextButton {
   border: none;
   width: 120px;
   height: 50px;
@@ -183,7 +195,7 @@ small {
   cursor: pointer;
 }
 
-.nextButton:hover {
+#nextButton:hover {
   filter: brightness(150%);
 }
 
@@ -192,22 +204,28 @@ small {
 }
 
 @media (max-width: 500px) {
-  h1 {
-    font-size: 26px;
+  body {
+    height: 100vh;
   }
   #main-container {
-    width: 500px;
+    height: 100%;
+    margin: 0;
     padding: 0;
-    height: 667px;
-    background-color: hsl(217, 100%, 97%);
-    margin: auto;
     border-radius: 0;
-    grid-template-columns: 100%;
-    grid-template-rows: 25% 75%;
+    grid-template-areas:
+      "sidebar"
+      "main"
+      "footer";
+    background-color: hsl(217, 100%, 97%);
+  }
+
+  #main-container {
+    grid-template-rows: 20% 65% 15%;
   }
 
   #sidebar {
     width: 100%;
+    height: 125%;
     background-image: url("/assets/images/bg-sidebar-mobile.svg");
     background-size: cover;
     display: flex;
@@ -215,77 +233,63 @@ small {
     justify-content: center;
   }
 
+  .step-container {
+    margin: 20px 10px 30px 10px;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+  }
+
   .right-text {
     display: none;
   }
 
-  .step-container {
-    margin: 30px 10px 0 10px;
-    padding-left: 0;
-    display: block;
-    align-items: center;
+  .circle {
+    margin: auto;
+    width: 45px;
+    height: 45px;
+  }
+
+  .circle p {
+    position: absolute;
+    top: -2px;
+    right: 17px;
   }
 
   #personal-info {
-    margin-top: 0px;
-    height: 100%;
-    grid-template-rows: 100%;
-  }
-
-  #personal-info .details-heading {
-    position: relative;
-    bottom: 218px;
     width: 90%;
+    height: 90%;
     margin: auto;
     padding: 20px 20px 0 20px;
     background-color: hsl(0, 0%, 100%);
-    border-radius: 10px 10px 0 0;
-  }
-
-  #infoForm {
-    position: relative;
-    bottom: 402px;
-    width: 90%;
-    margin: auto;
-    padding: 10px 20px 20px 20px;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
+    grid-template-rows: 30% 70%;
   }
 
   #infoForm input {
-    width: 100%;
     margin-bottom: 5px;
+    width: 90%;
   }
 
   .fieldError {
-    width: 100%;
+    width: 90%;
   }
 
-  #personal-info .footer {
-    background-color: hsl(0, 0%, 100%);
-    padding: 15px;
-    position: absolute;
+  #footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    bottom: 91px;
     justify-content: space-around;
+    padding: 10px;
+    background-color: hsl(0, 0%, 100%);
   }
 
-  .backButton {
+  #backButton {
     font-size: 15px;
   }
 
-  .nextButton {
+  #nextButton {
     height: 45px;
     border-radius: 5px;
-  }
-}
-
-@media (max-width: 375px) {
-  #main-container {
-    width: 375px;
-  }
-
-  #personal-info .footer {
-    bottom: 0px;
   }
 }

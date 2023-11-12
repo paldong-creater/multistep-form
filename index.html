@@ -27,7 +27,7 @@
     <div id="main-container">
       <section id="sidebar">
         <div class="step-container">
-          <span class="circle circle-highlight">
+          <span class="circle circle-highlight" id="step1">
             <p>1</p>
           </span>
           <div class="right-text">
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="step-container">
-          <span class="circle">
+          <span class="circle" id="step2">
             <p>2</p>
           </span>
           <div class="right-text">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="step-container">
-          <span class="circle">
+          <span class="circle" id="step3">
             <p>3</p>
           </span>
           <div class="right-text">
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="step-container">
-          <span class="circle">
+          <span class="circle" id="step4">
             <p>4</p>
           </span>
           <div class="right-text">
@@ -111,18 +111,6 @@
               />
             </label>
           </form>
-
-          <div class="footer">
-            <div id="empty"></div>
-            <button
-              class="nextButton"
-              id="infoNextButton"
-              type="submit"
-              value="Submit"
-            >
-              Next Step
-            </button>
-          </div>
         </div>
 
         <!-- Step 2 start -->
@@ -201,10 +189,6 @@
               </div>
             </fieldset>
           </form>
-          <div class="footer">
-            <button class="backButton" id="planBackButton">Go Back</button>
-            <button class="nextButton" id="planNextButton">Next Step</button>
-          </div>
         </div>
 
         <!-- Step 3 start -->
@@ -268,10 +252,6 @@
               </fieldset>
             </label>
           </form>
-          <div class="footer">
-            <button class="backButton" id="addonsBackButton">Go Back</button>
-            <button class="nextButton" id="addonsNextButton">Next Step</button>
-          </div>
         </div>
 
         <!-- Summary -->
@@ -300,11 +280,6 @@
               <h3 id="totalCost">+$12/mo</h3>
             </div>
           </div>
-
-          <div class="footer">
-            <button class="backButton" id="summaryBackButton">Go Back</button>
-            <button class="nextButton" id="confirmButton">Confirm</button>
-          </div>
         </div>
         <!-- Thank You Page -->
         <div id="thankyou">
@@ -318,6 +293,11 @@
             </p>
           </div>
         </div>
+      </section>
+      <section id="footer">
+        <div id="empty"></div>
+        <button id="backButton">Go Back</button>
+        <button id="nextButton" type="submit" value="Submit">Next Step</button>
       </section>
     </div>
     <script src="main.js"></script>
